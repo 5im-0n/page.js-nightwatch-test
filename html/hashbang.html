@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li><a href="/hello" class="hello-link">hello</a></li>
+		<li><a href="/hello?some=query&str=ing" class="hello-with-qs-link">hello with qs</a></li>
+	</ul>
+	<div id="someoutput"></div>
+
+	<script src="page.js"></script>
+
+	<script>
+		page('/', function() {
+			document.getElementById('someoutput').innerHTML = 'on /';
+		})
+		page('/hello', function() {
+			document.getElementById('someoutput').innerHTML = 'clicked on hello';
+		});
+		page({
+			hashbang: true
+		});
+	</script>
+</body>
+</html>

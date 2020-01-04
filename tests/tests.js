@@ -29,6 +29,8 @@ module.exports = {
 			.assert.urlEquals(url + '#!?some=query&str=ing')
 			.url(url + '?some=query&str=ing#!/hello')
 			.assert.urlEquals(url + '#!/hello?some=query&str=ing')
+			.url(url + '#!/hello?some=other&query=string')
+			.assert.urlEquals(url + '#!/hello?some=other&query=string')
 			.end();
 	}
-  };
+};
